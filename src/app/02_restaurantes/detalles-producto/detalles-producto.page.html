@@ -1,0 +1,30 @@
+<div>
+  <img src="assets/imgs/tilapia.png" alt="">
+</div>
+
+<ion-content>
+  <ion-item>
+    <ion-chip slot="end" color="success">{{productPrice}}</ion-chip>
+  <ion-label class="title">
+    {{productName}}
+  </ion-label>
+</ion-item>
+  <br>
+ <ion-label class="subtitle ion-margin">
+  {{productDescription}}
+ </ion-label>
+
+<div class="footer-div">
+  <ion-chip (click)="lessCantidad()" color = "white" >&nbsp;&nbsp;&nbsp;&nbsp;<ion-icon name="caret-down-outline"></ion-icon>&nbsp;&nbsp;&nbsp;&nbsp;</ion-chip>
+  <ion-label>&nbsp;&nbsp;Cantidad&nbsp;&nbsp;&nbsp;&nbsp;</ion-label>
+  <ion-chip (click)="addCantidad()" color = "white">&nbsp;&nbsp;&nbsp;&nbsp;<ion-icon name="caret-up-outline"></ion-icon>&nbsp;&nbsp;&nbsp;&nbsp;</ion-chip>
+  <ion-label>
+    {{cantidad}}
+  </ion-label>
+  <br>
+  <ion-text style="font-size: 30px;">Total : &nbsp;&nbsp;{{total}}</ion-text>
+
+</div>
+
+<ion-button expand="block" shape="round" class="mt-8" (click)="addCar()"> <ion-icon name="cart-outline"></ion-icon> &nbsp;&nbsp;&nbsp; Añadir al carrito</ion-button>
+</ion-content>

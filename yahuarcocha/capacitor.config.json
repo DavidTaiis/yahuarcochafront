@@ -1,0 +1,11 @@
+{
+  "appId": "com.yahuarcocha.app",
+  "appName": "yahuarcocha",
+  "bundledWebRuntime": false,
+  "webDir": "dist",
+  "plugins": {
+    "SplashScreen": {
+      "launchShowDuration": 0
+    }
+  }
+}

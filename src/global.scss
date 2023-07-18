@@ -24,3 +24,20 @@
 @import "~@ionic/angular/css/text-alignment.css";
 @import "~@ionic/angular/css/text-transformation.css";
 @import "~@ionic/angular/css/flex-utils.css";
+
+.title {
+    font-weight: bold;
+    font-size: 1.2rem;
+    color: var(--ion-color-primary);
+    margin-left: 2vh;
+}
+.subtitle {
+    font-weight: bold;
+    font-size: 1rem;
+    margin-left: 2vh;
+}
+.required-field{
+    color: rgb(227, 64, 64);
+    margin-top: -50px;
+    margin-left: 40px;
+}

@@ -3,7 +3,10 @@
 // The list of file replacements can be found in `angular.json`.
 
 export const environment = {
-  production: false
+  production: false,
+  google_maps_api_key: 'AIzaSyB0c7Oaoom8FtcCn46Eggfh8huka7rmOpc',
+   apiUrl: 'http://127.0.0.1:8000/api/' 
+  /* apiUrl: 'https://yahuarcocha.rtechi.com/api/' */
 };
 
 /*

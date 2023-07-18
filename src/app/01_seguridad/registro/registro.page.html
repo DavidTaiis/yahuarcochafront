@@ -1,0 +1,61 @@
+<ion-content [fullscreen]="true">
+  <div id="bg">
+    <ion-fab vertical="bottom" edge horizontal="center" slot="fixed">
+      <ion-fab-button routerLink="/">
+        <ion-icon name="close-outline" color="white"></ion-icon>
+      </ion-fab-button>
+    </ion-fab>
+  </div>
+  <ion-list lines="none" class="ion-margin">
+    <ion-list-header>Ingresa tus datos</ion-list-header>
+    <ion-item class="ion-margin">
+      <ion-input [(ngModel)]="name" placeholder="Ingresa tu nombre" type="text" clearInput="true" required = "true"></ion-input>
+    </ion-item>
+    <small class="required-field ion-margin" *ngIf="name == '' && submit">
+      El campo nombre es requerido
+    </small>
+    <ion-item class="ion-margin">
+      <ion-input (ionChange)="esEmailValido()" [(ngModel)]="email" placeholder="Correo electrónico" clearInput="true" type="email"></ion-input>
+    </ion-item>
+    <small class="required-field ion-margin" *ngIf="email == '' && submit">
+      El campo email es requerido
+    </small>
+    <small class="required-field ion-margin" *ngIf="!mailValido && presionoMail">
+      Email no valido
+    </small>
+    <ion-item class="ion-margin">
+      <ion-input [(ngModel)]="phone_number" placeholder="Número de teléfono" type="text" clearInput="true"></ion-input>
+    </ion-item>
+    <small class="required-field ion-margin" *ngIf="phone_number == '' && submit">
+      El campo número de teléfono es requerido
+    </small>
+    <ion-item class="ion-margin">
+      <ion-input [(ngModel)]="identification_card" placeholder="Ingresa tu cédula" type="text" clearInput="true"></ion-input>
+    </ion-item>
+    <small class="required-field ion-margin" *ngIf="identification_card == '' && submit">
+      El campo cédula es requerido
+    </small>
+    <ion-item class="ion-margin">
+      <ion-input [(ngModel)]="password" placeholder="Contraseña" type="password" clearInput="true"></ion-input>
+    </ion-item>
+    <small class="required-field ion-margin" *ngIf="password == '' && submit">
+      El campo contraseña es requerido
+    </small>
+    <ion-item class="ion-margin">
+      <ion-input (ionChange) = "contraseIguales()" [(ngModel)]="confirmaPassword" placeholder="Confirma contraseña" type="password" clearInput="true"></ion-input>
+    </ion-item>
+    <small class="required-field ion-margin" *ngIf="!iguales && presiono">
+      Las contraseñas no coinciden
+    </small>
+    <small class="required-field ion-margin" *ngIf="confirmaPassword == '' && submit">
+      El campo confirmar contraseña es requerido
+    </small>
+
+    <div align="right">
+      <ion-button (click)="register()" shape="round" strong="true" class="ion-margin-end">
+        REGISTRARSE
+        <ion-icon name="log-in" slot="end"></ion-icon>
+      </ion-button>
+    </div>
+  </ion-list>
+</ion-content>

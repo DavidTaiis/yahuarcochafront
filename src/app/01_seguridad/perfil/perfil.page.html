@@ -1,0 +1,75 @@
+<ion-header class="ion-no-border">
+  <ion-list lines="none">
+    <ion-item color="primary">
+      <ion-chip slot="end" style="color: white;" (click)="logout()">Cerrar sesión</ion-chip>
+    </ion-item>
+  </ion-list>
+</ion-header>
+<ion-content>
+  <ion-grid style="text-align: center; margin-top: 10px;">
+    <ion-label class="title">Perfil de usuario</ion-label>
+
+  </ion-grid>
+  <ion-grid>
+    <ion-row>
+      <ion-col size="6">
+        <ion-thumbnail *ngIf="foto != ''">
+          <img alt="" src="{{foto}}" />
+        </ion-thumbnail>
+
+        <ion-thumbnail *ngIf="foto == ''">
+          <img alt="" src="assets/imgs/profile.svg" />
+        </ion-thumbnail>
+      </ion-col>
+      <ion-col size="6">
+        <ion-button class="foto" shape="round" strong="true">
+          <label for="file-upload">  Actualizar<br> foto</label>
+          <input class="text-center"  (change)="newImageUpload($event)" id="file-upload" style="display: none" type="file"  accept="image/*">
+        </ion-button>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col size="12">
+        <ion-card class="card-shadow">
+          <ion-list lines="none" class="ion-margin datos">
+            <ion-list-header>Actualiza tus datos</ion-list-header>
+            <ion-item class="ion-margin">
+              <ion-icon slot="start" name="person-outline"></ion-icon>
+              <ion-input type="text" clearInput="true" [(ngModel)]="nameUser"></ion-input>
+            </ion-item>
+            <ion-item class="ion-margin">
+              <ion-icon slot="start" name="card-outline"></ion-icon>
+              <ion-input type="text" clearInput="true" [(ngModel)]="identification_card"></ion-input>
+            </ion-item>
+            <ion-item class="ion-margin">
+              <ion-icon slot="start" name="phone-portrait-outline"></ion-icon>
+              <ion-input type="text" clearInput="true" [(ngModel)]="phone"></ion-input>
+            </ion-item>
+            <ion-item class="ion-margin">
+              <ion-icon slot="start" name="mail-outline"></ion-icon>
+              <ion-input type="text" clearInput="true" [(ngModel)]="email"></ion-input>
+            </ion-item>
+
+            <ion-item (click)="addDirection()" class="ion-margin">
+              <ion-label class="normal">
+                 Ubicación
+              </ion-label>
+              <ion-buttons slot="start">
+                <ion-button>
+                     <ion-icon slot="icon-only" color="danger" name="location"></ion-icon>
+                </ion-button>
+              </ion-buttons>
+            </ion-item>
+      
+          </ion-list>
+          <div style="text-align: center; margin-top: 5%; margin-bottom: 5%;">
+            <ion-button shape="round" strong="true" (click)="updateProfile()">
+              Guardar datos
+            </ion-button>
+          </div>
+        </ion-card>
+      </ion-col>
+    </ion-row>
+
+  </ion-grid>
+</ion-content>

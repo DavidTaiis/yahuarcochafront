@@ -1,0 +1,40 @@
+
+
+div {
+    height: 23vh;
+    border-radius: 50px 0 50px 0px;
+    background: var(--ion-color-primary);
+    margin-bottom: 10px;
+    img{
+        height: 100%; 
+        width: 100%;
+        object-fit: contain;
+    }
+}
+.title {
+    font-weight: bold;
+    font-size: 1.2rem;
+    color: var(--ion-color-primary);
+    margin-left: 2vh;
+}
+ion-checkbox {
+    --size: 20px;
+    --background-checked: var(--ion-color-primary);
+  }
+  
+  ion-checkbox::part(container) {
+    border-radius: 6px;
+    border: 2px solid var(--ion-color-primary);
+  }
+  .card-items{
+    --background: var(--ion-color-light);
+  }
+
+div.footer-div{
+    padding-top: 5px;
+    margin-top: 3rem;
+    text-align: center;
+    color: var(--ion-color-primary);
+    height: 90px;
+    background: var(--ion-color-tertiary);
+}

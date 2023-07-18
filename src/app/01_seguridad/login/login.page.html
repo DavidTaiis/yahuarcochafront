@@ -1,0 +1,25 @@
+<ion-content [fullscreen]="true">
+  <div id="bg">
+    <ion-fab vertical="bottom" edge horizontal="center" slot="fixed">
+      <ion-fab-button routerLink="/">
+        <ion-icon name="close-outline" color="white"></ion-icon>
+      </ion-fab-button>
+    </ion-fab>
+  </div>
+  <ion-list lines="none" class="ion-margin">
+    <ion-list-header>Ingresa tus datos</ion-list-header>
+    <ion-item class="ion-margin">
+      <ion-input [(ngModel)]="email" placeholder="Nombre de usuario" type="text" clearInput="true"></ion-input>
+    </ion-item>
+    <ion-item class="ion-margin">
+      <ion-input [(ngModel)]="password" placeholder="Contraseña" type="password" clearInput="true"></ion-input>
+    </ion-item>
+    <ion-text color="medium"><p class="ion-margin-horizontal">¿Olvidaste tu contraseña?</p></ion-text>
+    <div align="right">
+      <ion-button (click)="login()" shape="round" strong="true" class="ion-margin-end">
+        INGRESAR
+        <ion-icon name="log-in" slot="end"></ion-icon>
+      </ion-button>
+    </div>
+  </ion-list>
+</ion-content>

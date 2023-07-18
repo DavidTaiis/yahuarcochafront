@@ -1,0 +1,43 @@
+  <div>
+    <img src="assets/imgs/tilapia.png" alt="">
+  </div>
+
+<ion-content>
+  <ion-label class="title">
+    {{name}}
+  </ion-label>
+
+  <ion-list lines="none">
+    <ion-item color="light">
+      <ion-label class="heading">Menú</ion-label>
+      <ion-button slot="end" fill="clear" size="small">
+        <ion-icon slot="icon-only" name="options"></ion-icon>
+      </ion-button>
+    </ion-item>
+
+    <ion-segment *ngIf="mostrar" [value]="valueSelected" mode = "ios" [scrollable]="true" (ionChange)= "segmentChange($event)">
+      <ng-container *ngFor="let category of categories">
+      <ion-segment-button value="{{category.id}}">
+        <ion-label class="px-3">{{category.name}}</ion-label>
+      </ion-segment-button>
+    </ng-container>
+    </ion-segment>
+
+    <ion-item-group>
+      <ng-container *ngFor="let product of products">
+        <ion-item class="ion-padding-vertical popItem" [routerLink]="['/menu/restaurantes/detalles-producto/',product.id]" >
+          <ion-thumbnail slot="start"> 
+              <img src="assets/imgs/tilapia.png" />
+          </ion-thumbnail>
+          <ion-text>
+            <ion-note color="dark"><b>{{product.name}}</b></ion-note>
+            <p class="ion-text-wrap">{{product.description}}</p>      
+          </ion-text> 
+            <ion-chip slot="end" color="success">{{product.price}}</ion-chip>     
+        </ion-item> 
+      </ng-container>
+           
+     
+    </ion-item-group>
+  </ion-list>
+</ion-content>
